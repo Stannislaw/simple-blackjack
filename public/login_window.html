@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <meta name="description" content="A simple blackjack">
+    <link rel="stylesheet" href="casino_style.css">
+</head>
+<body>
+    <h1 class="text"> Already have an account?</h1>
+    <input id="username" class="button" placeholder="Username">
+    <br>
+    <input id="password" type="password" class="button" placeholder="Password">
+    <br><br><br>
+    <button id="loginButton" class="button" onclick="gatherLogingData()">Log in</button>
+
+    <h3 class="text"> Or create an account</h3>
+    <button id="create an account" class="button" onclick="openRegistrationForm()">Create an account</button>
+    <br><br><br>
+    <h3 class="text">Play without logging in (worst option)</h3>
+    <button onclick="backToGame()" class="button">Back to game</button>
+
+    <script src="/site_logic/login_window.js" ></script>
+
+</body>
+
+
+</html>

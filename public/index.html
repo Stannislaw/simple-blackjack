@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackJack</title>
+    <meta name="description" content="A simple blackjack">
+    <link rel="stylesheet" href="casino_style.css">
+</head>
+<body>
+    <button id="registerButton" class="button" onclick="openRegisterBtn()">Login</button>
+    <button id="logoutButton" class="button" onclick="logoutBtn()" style="visibility: hidden;">Logout</button>
+    <h1 id="casinoTitle">Welcome to my casino</h1>
+    <br>
+    <p id="wannaPlaySomeBlackjack">Wanna play some Blackjack?</p>
+
+    <br>
+    <h3 class="moneyDescriptors">Your money</h3>
+    <h3 class="moneyDescriptors">Current bet</h3>
+    <br>
+    <h3 id="money" class="moneyDescriptors">100</h3>
+    <h3 id="bet" class="moneyDescriptors">0</h3>
+    <br>
+    <h3 id="dealerCardsTag" class="cards">Dealer cards</h3>
+    <h3 id="yourCardsTag" class="cards">Your cards</h3>
+    <br>
+    <h3 id="dealerCards" class="cards"></h3>
+    <h3 id="yourCards" class="cards"></h3>
+    <br>
+    <button id="betButton" class="button" onclick="betMoneyBtn()">Bet</button>
+    <button id="drawACard" class="button" onclick="drawACardBtn()">Bust</button>
+    <button id="showdown" class="button" onclick="showdownBtn()">Stay</button>
+    <button id="playAgain" class="button"onclick="playAgainBtn()">Play again</button>
+
+    <br><br>
+    <input id="stake" class="button" placeholder="Bet some money">
+    <br><br>
+    <h3 id="message" class="moneyDescriptors">Let's win some money!</h3>
+    <script src="/site_logic/index.js" ></script>
+</body>
+
+
+</html>

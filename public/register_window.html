@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <meta name="description" content="A simple blackjack">
+    <link rel="stylesheet" href="casino_style.css">
+</head>
+<body>
+    <h1 class="text">Register</h1>
+    <input id="username" class="button" placeholder="Username">
+    <br>
+    <input id="password" type="password" class="button" placeholder="Password">
+    <br>
+    <input id="email" class="button" placeholder="Email">
+    <br>
+    <button  class="button" onclick="gatherRegistrationData()">Register</button>
+    <br><br><br>
+    <h3 class="text"> Already have an account?</h3>
+    <button id="register" class="button" onclick="openLoggingInWindow()">Log in</button>
+    <br><br><br>
+    <h3 class="text">Play without logging in (worst option)</h3>
+    <button onclick="backToGame()" class="button">Back to game</button>
+    <script src="/site_logic/register_window.js" ></script>
+</body>
+
+
+</html>

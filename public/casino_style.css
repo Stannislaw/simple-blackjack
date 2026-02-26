@@ -1,0 +1,102 @@
+body{
+    margin:0;
+    min-height:100vh;
+    text-align:center;
+    background-image: url("Images/table_background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #10221a;
+}
+ 
+#registerButton{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#wannaPlaySomeBlackjack{
+    /* margin: 2rem; */
+    /* padding: 0.6rem 1rem; */
+    text-align: center;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    color: #ffd700;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.65);
+    /* letter-spacing: 0.12em; */
+    /* background-color: rgba(0,0,0,0.35); */
+    border-radius: 8px;
+    display: inline-block;
+
+}
+
+.text{
+    margin: 2rem;
+    padding: 0.6rem 1rem;
+    text-align: center;
+    font-family: "Georgia", "Times New Roman", serif;
+    /* font-size: clamp(1.5rem, 5vw, 3rem); */
+    color: #ffd700;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.65);
+    letter-spacing: 0.12em;
+    /* background-color: rgba(0,0,0,0.35); */
+    border-radius: 8px;
+    /* display: inline-block; */
+}
+
+#casinoTitle{
+    margin: 2rem;
+    padding: 0.6rem 1rem;
+    text-align: center;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    color: #ffd700;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.65);
+    letter-spacing: 0.12em;
+    background-color: rgba(0,0,0,0.35);
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.moneyDescriptors{
+    /* margin:clamp(1.5rem, 5vw, 3rem); */
+    padding: 0.6rem 1rem;
+    text-align: center;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: clamp(0.5rem, 5vw, 1.5rem);
+    color: #e28a2d;
+    background-color: rgb(24, 24, 24,0.5);
+    display:inline-block;
+    border-radius: 99px;
+
+}
+
+.cards{
+    /* margin:clamp(1.5rem, 5vw, 3rem); */
+    padding: 0.6rem 1rem;
+    text-align: center;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: clamp(0.5rem, 5vw, 1.5rem);
+    color: #bd361b;
+    background-color: rgb(24, 24, 24,0.5);
+    display:inline-block;
+    border-radius: 99px;
+
+}
+
+.button{
+    padding: 0.6rem 1rem;
+    text-align: center;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: clamp(0.5rem, 5vw, 1.5rem);
+    color: #ef2ddfe4;
+    background-color: rgb(24, 24, 24,0.7);
+    display:inline-block;
+    border-radius: 99px;
+}
+
+#stake{
+    margin: 1rem;
+    
+    
+}

@@ -1,0 +1,30 @@
+to create package.json
+
+npm init -y 
+
+
+
+
+
+install packages. 
+this creates package-lock.json
+and also adds dependencies to package.json
+
+npm install express
+npm install bcryptjs
+npm install jsonwebtoken
+
+
+in package.json
+    set type to module
+    add dev to the scripts 
+        use node
+        watchflag to refresh authomatically
+        specify env file
+        add source code to start
+    optionally add description
+
+create database model to store user data
+
+
+
