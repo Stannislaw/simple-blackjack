@@ -5,10 +5,12 @@ let email;
 //base url has to be an empty string. when it is '/' it is not working
 const BASE_URL='';
 
+//after user clicks back to game button
 function backToGame() {
     window.location.href = "index.html";
 }
 
+//when user clicks login button
 function openLoggingInWindow() {
     window.location.href = "login_window.html";
 }

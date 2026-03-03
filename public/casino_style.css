@@ -16,15 +16,11 @@ body{
 }
 
 #wannaPlaySomeBlackjack{
-    /* margin: 2rem; */
-    /* padding: 0.6rem 1rem; */
     text-align: center;
     font-family: "Georgia", "Times New Roman", serif;
     font-size: clamp(1.5rem, 5vw, 3rem);
     color: #ffd700;
     text-shadow: 0 4px 8px rgba(0,0,0,0.65);
-    /* letter-spacing: 0.12em; */
-    /* background-color: rgba(0,0,0,0.35); */
     border-radius: 8px;
     display: inline-block;
 
@@ -35,13 +31,10 @@ body{
     padding: 0.6rem 1rem;
     text-align: center;
     font-family: "Georgia", "Times New Roman", serif;
-    /* font-size: clamp(1.5rem, 5vw, 3rem); */
     color: #ffd700;
     text-shadow: 0 4px 8px rgba(0,0,0,0.65);
     letter-spacing: 0.12em;
-    /* background-color: rgba(0,0,0,0.35); */
     border-radius: 8px;
-    /* display: inline-block; */
 }
 
 #casinoTitle{
@@ -59,7 +52,6 @@ body{
 }
 
 .moneyDescriptors{
-    /* margin:clamp(1.5rem, 5vw, 3rem); */
     padding: 0.6rem 1rem;
     text-align: center;
     font-family: "Georgia", "Times New Roman", serif;
@@ -72,7 +64,6 @@ body{
 }
 
 .cards{
-    /* margin:clamp(1.5rem, 5vw, 3rem); */
     padding: 0.6rem 1rem;
     text-align: center;
     font-family: "Georgia", "Times New Roman", serif;
@@ -96,7 +87,5 @@ body{
 }
 
 #stake{
-    margin: 1rem;
-    
-    
+    margin: 1rem; 
 }

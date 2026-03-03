@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken'
 
+//verify if the authorization token provided by the request
 function authMiddleware(req, res, next) {
     const token = req.headers['authorization']
 

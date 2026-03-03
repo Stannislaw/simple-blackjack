@@ -1,7 +1,7 @@
 {
   "name": "blackjack_second_try",
   "version": "1.0.0",
-  "description": "blackjack game",
+  "description": "A simple blackjack game i created to learn javaScript",
   "main": "index.js",
   "scripts": {
     "dev": "node --watch --env-file=.env  ./src/server.js",

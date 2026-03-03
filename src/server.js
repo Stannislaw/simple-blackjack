@@ -14,7 +14,10 @@ import userDataRoutes from './routes/userDataRoutes.js'
 import path, { dirname } from  'path'
 //creation of a server instance
 const app=express()
+
+//loads environment variables into process.env
 dotenv.config()
+
 //specifies a port from env variables. If the variable is unavailable, uses value 1234
 const PORT = process.env.PORT || 1234
   
@@ -22,7 +25,9 @@ const PORT = process.env.PORT || 1234
 const __filename =fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
+//tell the server to parse json in the request body authomatically
 app.use(express.json())
+
 //servers the html from directory /public
 //informs the server that all the files in this directory are static
 //all the requests for static files will be redirected there

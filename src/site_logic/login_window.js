@@ -2,14 +2,17 @@
 const BASE_URL = ''
 let token
 
+//when user clicks 'register' button
 function openRegistrationForm() {
     window.location.href = "register_window.html";  
 }
 
+//when user clicks 'back to game' button
 function backToGame() {
     window.location.href = "index.html";
 }
 
+//when user already entered data for login and clicked 'log in' button
 async function gatherLogingData() {
     //gather username and password from texboxes
     const username = document.getElementById("username").value.trim();
@@ -33,6 +36,7 @@ async function gatherLogingData() {
 
         const data = await response.json();
 
+        //if registration was successfull a verification token is saved in memory
         if(data.token){
             token=data.token
             localStorage.setItem('token',token)
@@ -41,9 +45,11 @@ async function gatherLogingData() {
             throw Error("failed to login")
         }
 
+        //greet the new user and redirect to game window
         alert(`Welcome, ${data.username}!`);
         window.location.href = "index.html";
     } catch (error) {
+        //if API request went wrong
         console.log(error.message)
         alert("Cannot connect to backend server. Is it running?");
     }

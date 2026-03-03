@@ -41,6 +41,7 @@ class Deck {
 //only one deck will be needed for blackjack game
 let deck=new Deck();
 
+//variables definitions
 let playerCards = [];
 let dealerCards = [];
 let playerSum=0;
@@ -55,6 +56,7 @@ let cardsElements = document.querySelectorAll(".cards");
 // Loop through each element and set its visibility to "hidden"
 cardsElements.forEach(element => {element.style.visibility = "hidden";});
 
+//access token if it exists in the local storage
 function getStoredToken() {
     const token = localStorage.getItem("token");
     if (!token || token === "undefined" || token === "null") {
@@ -63,7 +65,7 @@ function getStoredToken() {
     return token;
 }
 
-
+//update amount of money in database
 async function updateMoney() {
     document.getElementById("money").textContent = money;
     const token = getStoredToken();
@@ -90,7 +92,9 @@ async function updateMoney() {
     }
 }
 
+//load the money value from the database. Update local variable and display
 async function loadMoney() {
+    //check token
     const token = getStoredToken();
     if (!token) {
         document.getElementById("money").textContent = money
@@ -98,6 +102,7 @@ async function loadMoney() {
         return
     }
 
+    //send API request
     try {
         const response = await fetch(apiBase + "userData/getMoney", {
             headers: {
@@ -119,10 +124,16 @@ async function loadMoney() {
         }
 
         const data = await response.json()
+
+        //update loca lvariable
         if (typeof data.money === 'number') {
             money = data.money
         }
+
+        //update display
         document.getElementById("money").textContent = money
+
+        //update visibility of login/logout buttons
         setAuthButtons(true)
         console.log("money loaded successfully")
     } catch (error) {
@@ -131,10 +142,12 @@ async function loadMoney() {
     }
 }
 
+//update message on the display
 function updateMessage(message) {
     document.getElementById("message").textContent = message;
 }
 
+//calculate value of player's hand
 function calculateHandSum(cards) {
     let sum = 0;
     let aces = 0;
@@ -164,6 +177,7 @@ function calculateHandSum(cards) {
     return sum;
 }
 
+//update money display and visibility of cards, buttons
 function finishRound() {
     document.getElementById("playAgain").style.visibility = "visible";
     document.getElementById("drawACard").style.visibility = "hidden";
@@ -201,7 +215,7 @@ function resetGame() {
 }
 
 
-
+//when the player already entered the stake, start game
 function StartGame() {
     console.log("Starting game with stake:", stake);
     document.getElementById("yourCards").style.visibility = "visible";
@@ -224,7 +238,7 @@ function StartGame() {
 }
 
 
-
+//draw a player's card
 function DrawCard(){
     if (!deck) return;
 
@@ -242,29 +256,21 @@ function DrawCard(){
     }
 }
 
-//the section below contains UI buttons mechanics
+//check if the player entered a valid stake value. start game
 function betMoneyBtn() {
-    // Get the input field where the user enters the stake
+    //get the stake
     let stakeInput = document.getElementById("stake");
-
-    // Parse the value entered in the input field as an integer
     stake = parseInt(stakeInput.value, 10);
-    // console.log("Stake entered:", stake);
 
-    // Get the current amount of money available, parsed as an integer
-    // Check if the stake is a valid number, greater than 0, and less than or equal to the available money
+    //check if the stake is correct. if it is so, start the game
     if (!isNaN(stake) && stake > 0 && stake <= money) {
-        // Update the "bet" element's text content to show the stake amount
         document.getElementById("bet").textContent = stake;
 
-        // Deduct the stake amount from the available money and update the "money" element's text content
         money -= stake;
         updateMoney();
 
-        // Clear the input field by setting its value to an empty string
         stakeInput.value = "";
 
-        // Hide the "betButton" and show the "drawACard" button without affecting layout
         document.getElementById("betButton").style.visibility = "hidden";
         document.getElementById("stake").style.visibility = "hidden";
         document.getElementById("drawACard").style.visibility = "visible";
@@ -272,7 +278,6 @@ function betMoneyBtn() {
         cardsElements.forEach(element => {element.style.visibility = "visible";});
         StartGame();
     } else {
-        // If the stake is invalid, show an alert to the user
         updateMessage("Invalid stake. Please enter a valid amount that is less than or equal to your available money.");
     }
 }
@@ -285,6 +290,7 @@ function playAgainBtn() {
         resetGame();
 }
 
+//calculate the winner of the game and update player money
 function showdownBtn(){
     let dealerSum = calculateHandSum(dealerCards);
 
@@ -319,6 +325,7 @@ function openRegisterBtn() {
     window.location.href = "login_window.html";
 }
 
+//sets visibility of login/logout buttons when the user logs in or out
 function setAuthButtons(isLoggedIn) {
     const shouldShowLogout = Boolean(isLoggedIn);
     if (registerButton) registerButton.style.visibility = shouldShowLogout ? "hidden" : "visible";
@@ -326,6 +333,7 @@ function setAuthButtons(isLoggedIn) {
     console.log("button visibility updated")
 }
 
+//log out
 function logoutBtn() {
     localStorage.removeItem("token");
     money = 100;
@@ -334,6 +342,7 @@ function logoutBtn() {
     updateMessage("Logged out.");
 }
 
+//when the page is opened load auth buttons visibility and update money display and value
 document.addEventListener("DOMContentLoaded", () => {
     console.log("info from function listening to entering this page")
     setAuthButtons(false);
