@@ -5,7 +5,7 @@ A simple project I created to learn Javascript. For this reason I tried to add a
 
 **What does it contain?**
 
-The projects features a simple blackjack game and possibility to have an account to store your state of money across sections
+The projects features a simple blackjack game and possibility to have an account to store your state of money in a database
 
 
 **Does it work?**
